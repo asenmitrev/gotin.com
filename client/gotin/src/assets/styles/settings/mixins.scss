@@ -1,0 +1,23 @@
+@mixin responsive-xs {
+    @media only screen and (max-width: $media-xs-end) {
+        @content;
+    }
+}
+
+@mixin responsive-sm {
+    @media only screen and (min-width : $media-sm) and (max-width : $media-sm-end) {
+        @content;
+    }
+}
+
+@mixin responsive-md {
+    @media only screen and (min-width : $media-md) and (max-width : $media-md-end) {
+        @content;
+    }
+}
+
+@mixin responsive-lg {
+    @media only screen and (min-width : $media-lg) {
+        @content;
+    }
+}

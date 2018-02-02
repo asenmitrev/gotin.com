@@ -1,0 +1,43 @@
+.form-group {
+    width: calc(100% - 100px);
+
+    .form-label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+        line-height: 24px;
+    }
+
+    .form-control {
+        height: 35px;
+        line-height: 35px;
+        font-size: 16px;
+        margin-bottom: 20px;
+        width: 100%;
+        border: 1px solid rgba(0,0,0,.15);
+        border-radius: .25rem;
+        padding: .5rem .75rem;
+        background-color: #fff;
+        transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+
+        &:focus {
+            color: #464a4c;
+            background-color: #fff;
+            border-color: $themeDarkGreen;
+            outline: 0;
+        }
+
+        &.facebook-login {
+            background: transparent;
+            line-height: 24px;
+            font-weight: bold;
+            text-align: center;
+            border: 2px solid white;
+            cursor: pointer;
+        }
+    }
+}
+
+.submit-btn {
+    width: 300px;
+}

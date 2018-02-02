@@ -1,0 +1,25 @@
+html {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    font-size: 62.5%;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    color: $primaryTextColor;
+    font-size: $fontSizeRegular;
+    font-family: $fontRegular;
+    height: 100%;
+    display: flex;
+    padding-top: $headerHeight;
+}
+
+a {
+    color: $linkColor;
+    text-decoration: none;
+
+    &:hover {
+        color: $linkHoverColor;
+        text-decoration: underline;
+    }
+}

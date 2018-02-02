@@ -1,0 +1,36 @@
+// Contains color, fonts, font sizes, etc.
+$imagesPath: '~/assets/images';
+$fontsPath: '~/assets/fonts';
+
+// Define font family variables
+$fontRegular: 'Open Sans',
+sans-serif;
+$fontCondensed: 'Open Sans Condensed',
+sans-serif;
+$fontLogo: 'Neucha', cursive;
+
+
+// Define font sizes
+$fontSizeTiny: 1.1rem;
+$fontSizeSmall: 1.2rem;
+$fontSizeRegular: 1.4rem;
+$fontSizeMedium: 1.6rem;
+$fontSizeTitle: 2rem;
+$fontSizeBig: 2.2rem;
+$fontSizeHeading: 3.2rem;
+$fontSizeHuge: 5rem;
+
+$media-super-xs-end: 580px;
+$media-xs-end: 767px;
+$media-sm: 768px;
+$media-sm-end: 991px;
+$media-md: 992px;
+$media-md-end: 1299px;
+$media-lg: 1300px;
+
+$headerHeight: 5.4rem;
+$logoHeight: 3rem;
+$profileMenuWidth: 16rem;
+
+$slowTransitionTime: all 0.5s ease;
+$defaultTransitionTime: all 0.3s ease;

@@ -1,0 +1,69 @@
+.text {
+    &-bold {
+        font-weight: bold;
+    }
+
+    &-center {
+        text-align: center !important;
+    }
+
+    &-left {
+        text-align: left !important;
+    }
+
+    &-right {
+        text-align: right !important;
+    }
+
+    &-uppercase {
+        text-transform: uppercase !important;
+    }
+
+    &-capitalize {
+        text-transform: capitalize !important;
+    }
+
+    &-ellipsis {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    &-italic {
+        font-style: italic;
+    }
+
+    &-word-break {
+        word-break: break-all !important;
+    }
+
+    &-word-wrap {
+        word-wrap: break-word !important;
+    }
+
+    &-pre-wrap {
+        white-space: pre-wrap !important;
+    }
+
+    &-line-through {
+        text-decoration: line-through;
+    }
+
+    &-underline {
+        text-decoration: underline;
+    }
+}
+
+[hidden] {
+    display: none !important;
+}
+
+.flex {
+    &-none {
+        flex: none;
+    }
+
+    &-1 {
+        flex: 1;
+    }
+}
