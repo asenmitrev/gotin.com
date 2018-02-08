@@ -406,6 +406,12 @@ router.get('', function(req,res){
     });
 });
 
+router.get('/gotin/week', (req, res) => {
+    User.findOne({ username: 'asen'}).exec((err, useer) => {
+        res.json(useer);
+    })
+});
+
 router.put('/profile', tokenVerificationMiddleware, function (req, res) {
     User.findOne({ _id: req.user._id }).exec(function (err, user) {
         if (err)

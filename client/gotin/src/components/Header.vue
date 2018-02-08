@@ -31,7 +31,7 @@ export default {
   },
   mixins: [localStorageService],
   computed: {
-    isLoggedIn() {
+    isLoggedIn () {
       return this.$store.getters.isLoggedIn
     }
   },
@@ -43,9 +43,9 @@ export default {
       this.menuOpen = false
     },
     logout () {
-        this.removeFromStorage('currentUser');
-        this.removeFromStorage('authToken');
-        this.$store.commit('logout')
+      this.removeFromStorage('currentUser')
+      this.removeFromStorage('authToken')
+      this.$store.commit('logout')
     }
   },
 

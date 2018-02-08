@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="row row--no-margin row1 center-xs" v-bind:style="styleObject">
+    <div class="row row--no-margin row1 center-xs" :style="styleObject">
       <div class="overlay">
         <h1 class="header-logo col-xs-12 text-center">ГОТИН.COM</h1>
         <div class="header-text col-xs-12 text-center">Чудиш се дали си готин? Спориш с приятелите си кой е по-готин? Най-накрая има място, където да проверите кой е най-готин! Готин.com, мястото на готините хора.</div>
@@ -11,7 +11,11 @@
       <div class="column col-xs-12">
         <h1 class="text-center subheader">Най-готините</h1>
         <div class="text-center subtext">Ти може да си готин, но винаги има един най-готин. Тук са най-готините за седмицата, месеца и всички времена!</div>
-        {{user}} {{isLoggedIn}} {{token}}
+        <div class="row">
+          <div class="col-xs-4">
+            <user-profile :user="topUserWeek"></user-profile>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -26,7 +30,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex'
+import apiService from './mixins/api-service'
+import UserProfile from './common/User'
 
 import image1 from './../assets/images/chicken.jpg'
 import image2 from './../assets/images/graffiti.jpg'
@@ -39,12 +45,40 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
+      topUserWeek: null,
       styleObject: {
         'background-image': 'url(' + backgrounds[randomInt] + ')'
       }
     }
   },
+  beforeRouteEnter (to, from, next) {
+    apiService.get('users/gotin/week')
+      .then(response => {
+        next(vm => vm.setData(response.data))
+      })
+      .catch(error => {
+        this.$toastr('error', error.response.data.message, 'Грешка!')
+      })
+  },
+  // when route changes and this component is already rendered,
+  // the logic will be slightly different.
+  beforeRouteUpdate (to, from, next) {
+    this.topUserWeek = null
+    apiService.get('users/gotin/week')
+      .then(response => {
+        this.setData(response.data)
+        next()
+      })
+      .catch(error => {
+        this.$toastr('error', error.response.data.message, 'Грешка!')
+      })
+  },
+  methods: {
+    setData (user) {
+      this.topUserWeek = user
+    }
+  },
+  components: { UserProfile },
   computed: mapGetters(['user', 'isLoggedIn', 'token'])
 }
 
